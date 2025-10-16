@@ -55,9 +55,9 @@ const StudentManager = () => {
     if (!validateForm()) return;
     try {
 
-      //await axios.post(`${baseUrl}/add`, student);
-      const payload = { ...student, id: Number(student.id) };
-      await axios.post(`${baseUrl}/add`, payload);
+      await axios.post(`${baseUrl}/add`, student);
+      // const payload = { ...student, id: Number(student.id) };
+      // await axios.post(`${baseUrl}/add`, payload);
       setMessage('Student added successfully.');
       fetchAllStudents();
       resetForm();
