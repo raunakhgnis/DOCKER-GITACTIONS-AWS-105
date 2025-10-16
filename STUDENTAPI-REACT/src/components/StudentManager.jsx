@@ -54,7 +54,10 @@ const StudentManager = () => {
   const addStudent = async () => {
     if (!validateForm()) return;
     try {
-      await axios.post(`${baseUrl}/add`, student);
+
+      //await axios.post(`${baseUrl}/add`, student);
+      const payload = { ...student, id: Number(student.id) };
+      await axios.post(`${baseUrl}/add`, payload);
       setMessage('Student added successfully.');
       fetchAllStudents();
       resetForm();
@@ -128,7 +131,7 @@ const StudentManager = () => {
 )}
 
 
-      <h2>Student Management</h2>
+      <h2>Student Management 2300030578</h2>
 
       <div>
         <h3>{editMode ? 'Edit Student' : 'Add Student'}</h3>
